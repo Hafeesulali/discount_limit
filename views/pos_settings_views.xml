@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <record id="discount_limit" model="ir.ui.view">
+            <field name="name">discount limit</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="point_of_sale.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@id='pos_pricing_section']" position="after">
+                    <div class="row mt16 o_settings_container" id="pos_pricing_section">
+                        <div class="col-xs-12 col-lg-6 o_setting_box" id="discount_limit">
+                            <div class="o_setting_right_pane">
+                                <label for="discount_limit" string="Discount Limit"/>
+                                <div class="content-group">
+                                    <div class="mt16">
+                                        <field name="discount_limit" groups="point_of_sale.group_pos_manager"/>
+                                        <br></br>
+                                        <label for="pos_category_ids" string="Category"/>
+                                        <br></br>
+                                        <field name="pos_category_ids" groups="point_of_sale.group_pos_manager"
+                                               widget="many2many_tags"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    z
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
